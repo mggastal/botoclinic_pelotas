@@ -1,684 +1,331 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Botoclinic Pelotas — Grupo VIP Dia das Mães</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grupo VIP Black Friday | Botoclinic Pelotas</title>
+<meta name="description" content="Entre no Grupo VIP da Botoclinic Pelotas e receba no WhatsApp as condições da Black Friday, com protocolos com até 70% off. Válido até 30/11.">
+<meta name="theme-color" content="#070a06">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Grupo VIP Black Friday | Botoclinic Pelotas">
+<meta property="og:description" content="Condições da Black Friday no seu WhatsApp. Protocolos com até 70% off, só até 30/11.">
+<meta property="og:image" content="https://botoclinicpelotas.com.br/grupovip/img/og.jpg">
+<meta property="og:url" content="https://botoclinicpelotas.com.br/">
+<link rel="canonical" href="https://botoclinicpelotas.com.br/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="grupovip/img/sculptra.webp">
 <style>
-:root {
-  --green-dark: #5a6b4a;
-  --green-mid: #6b7c5a;
-  --green-light: #8a9b7a;
-  --green-pale: #f0f2ec;
-  --green-bg: #687860;
-  --cream: #faf9f6;
-  --cream-warm: #f4f1eb;
-  --dark: #2a2a25;
-  --muted: #7a7a72;
-  --white: #ffffff;
-  --gold: #c9a96e;
-}
+  :root{
+    --bg:#070a06; --bg-2:#0b120a; --neon:#e1fa00; --neon-ink:#141900;
+    --ink:#f4f6ee; --muted:#b8c0ac; --soft:#8c967e;
+    --line:rgba(244,246,238,.12); --panel:rgba(244,246,238,.04);
+    --sans:"Figtree","Avenir Next",system-ui,sans-serif;
+    --serif:"DM Serif Display",Georgia,serif;
+    --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;overflow-x:clip}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{width:min(1120px,100% - 40px);margin-inline:auto}
 
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Jost', sans-serif;
-  background: var(--cream);
-  color: var(--dark);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
+  /* topo */
+  .top{position:absolute;inset:0 0 auto;z-index:5;padding:22px 0}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .top img{height:22px;width:auto}
+  .pin{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .pin svg{width:14px;height:14px;color:var(--neon)}
 
-/* ─── HERO ─── */
-.hero {
-  min-height: 100svh;
-  background: var(--green-bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 80px 28px 100px;
-  position: relative;
-  overflow: hidden;
-}
+  /* hero */
+  .hero{position:relative;isolation:isolate;overflow:hidden;min-height:100svh;display:flex;align-items:center;padding:96px 0 64px}
+  .hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;max-width:900px;max-height:900px;
+    background:radial-gradient(closest-side,rgba(225,250,0,.16),transparent 70%);z-index:-1}
+  .hero::after{content:"";position:absolute;inset:auto auto -30% -20%;width:60vw;height:60vw;
+    background:radial-gradient(closest-side,rgba(120,150,20,.22),transparent 70%);z-index:-1}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  /* selos no tamanho nativo ou menor (os PNGs tem so 300/460px): esticar deixa borrado */
+  .badges{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+  .badges img{flex:none;width:auto}
+  .badges .b1{height:34px}
+  .badges .b2{height:23px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);
+    background:var(--panel);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--neon);margin-bottom:22px}
+  .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--neon);box-shadow:0 0 0 0 rgba(225,250,0,.6);animation:pulse 1.8s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(225,250,0,0)}100%{box-shadow:0 0 0 0 rgba(225,250,0,0)}}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,4.6vw,56px);line-height:1.02;letter-spacing:-.01em;margin-bottom:18px}
+  h1 em{font-style:italic;color:var(--neon)}
+  .lead{font-size:clamp(17px,2.1vw,20px);color:var(--muted);max-width:30em;margin-bottom:30px}
+  .lead b{color:var(--ink);font-weight:700}
 
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,255,255,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 80% 80%, rgba(0,0,0,0.12) 0%, transparent 60%);
-  pointer-events: none;
-}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:60px;padding:0 30px;border-radius:999px;
+    background:var(--neon);color:var(--neon-ink);font:800 17px/1 var(--sans);text-decoration:none;letter-spacing:.005em;
+    box-shadow:0 12px 40px -10px rgba(225,250,0,.55);transition:transform .35s var(--ease),box-shadow .3s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 50px -10px rgba(225,250,0,.7)}
+  .btn svg{width:22px;height:22px;flex:none}
+  .note{margin-top:14px;font-size:14px;color:var(--soft)}
 
-/* decorative circles */
-.hero-deco {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.08);
-  pointer-events: none;
-}
-.hero-deco:nth-child(1) { width: 520px; height: 520px; top: -180px; right: -180px; animation: float 9s ease-in-out infinite; }
-.hero-deco:nth-child(2) { width: 280px; height: 280px; bottom: -100px; left: -80px; animation: float 11s ease-in-out 2s infinite; }
-.hero-deco:nth-child(3) { width: 160px; height: 160px; top: 60px; left: 60px; animation: float 7s ease-in-out 4s infinite; border-color: rgba(255,255,255,0.05); }
-@keyframes float { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-12px) scale(1.02)} }
+  /* contagem */
+  .count{display:flex;gap:10px;margin-top:30px}
+  .count div{min-width:70px;padding:12px 8px;border-radius:14px;border:1px solid var(--line);background:var(--panel);text-align:center}
+  .count b{display:block;font-size:28px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+  .count span{display:block;margin-top:6px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+  .count-label{margin-top:26px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+  .count-label + .count{margin-top:10px}
 
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 560px;
-  width: 100%;
-}
+  .hero-photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,10,6,.85))}
+  .tag{position:absolute;left:18px;bottom:18px;z-index:2;display:flex;align-items:baseline;gap:8px;padding:12px 18px;border-radius:16px;
+    background:rgba(7,10,6,.72);backdrop-filter:blur(10px);border:1px solid var(--line)}
+  .tag small{font-size:13px;color:var(--muted)}
+  .tag b{font-size:30px;font-weight:800;color:var(--neon);line-height:1}
 
-/* logo placeholder */
-.logo-wrap {
-  margin-bottom: 40px;
-  opacity: 0;
-  animation: fadeUp 0.8s ease 0.1s forwards;
-}
-.logo-text {
-  font-family: 'Jost', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--white);
-  display: inline-block;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  padding-bottom: 8px;
-}
-.logo-text sup {
-  font-size: 12px;
-  font-weight: 300;
-  vertical-align: super;
-  letter-spacing: 0;
-}
+  /* beneficios */
+  section{padding:clamp(64px,9vw,112px) 0}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--neon);margin-bottom:12px}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.6vw,50px);line-height:1.05;margin-bottom:14px}
+  .sub{color:var(--muted);max-width:36em}
+  .perks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .perk{padding:28px;border-radius:24px;border:1px solid var(--line);background:var(--panel)}
+  .perk .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(225,250,0,.12);color:var(--neon);margin-bottom:18px}
+  .perk .ico svg{width:24px;height:24px}
+  .perk h3{font-size:20px;font-weight:700;margin-bottom:6px}
+  .perk p{color:var(--muted);font-size:16px}
 
-.vip-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.25);
-  backdrop-filter: blur(8px);
-  color: var(--white);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  padding: 8px 20px;
-  border-radius: 100px;
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeUp 0.8s ease 0.2s forwards;
-}
-.vip-badge::before {
-  content: '★';
-  font-size: 10px;
-  color: var(--gold);
-}
+  /* protocolos */
+  .protos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+  .proto{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:var(--bg-2)}
+  .proto img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+  .proto:hover img{transform:scale(1.04)}
+  .proto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(7,10,6,.9))}
+  .proto span{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;font-weight:700;font-size:16px;line-height:1.2}
+  .fine{margin-top:16px;font-size:13px;color:var(--soft)}
 
-.hero-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.4rem, 9vw, 4rem);
-  font-weight: 300;
-  line-height: 1.1;
-  color: var(--white);
-  margin-bottom: 16px;
-  opacity: 0;
-  animation: fadeUp 0.9s ease 0.35s forwards;
-}
-.hero-title em {
-  font-style: italic;
-  font-weight: 400;
-}
+  /* chamada final */
+  .final{text-align:center}
+  .final-box{position:relative;overflow:hidden;isolation:isolate;padding:clamp(48px,7vw,80px) 24px;border-radius:32px;border:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(225,250,0,.08),rgba(225,250,0,.02))}
+  .final-box::before{content:"";position:absolute;inset:auto 10% -60% 10%;height:120%;background:radial-gradient(closest-side,rgba(225,250,0,.2),transparent 70%);z-index:-1}
+  .final h2{max-width:14em;margin-inline:auto}
+  .final .sub{margin:0 auto 30px}
+  .final .count{justify-content:center}
 
-.hero-sub {
-  font-size: clamp(0.88rem, 3.5vw, 1.05rem);
-  font-weight: 300;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.75;
-  margin-bottom: 44px;
-  opacity: 0;
-  animation: fadeUp 0.9s ease 0.5s forwards;
-}
-.hero-sub strong {
-  color: var(--white);
-  font-weight: 600;
-}
+  footer{border-top:1px solid var(--line);padding:36px 0 120px;font-size:14px;color:var(--soft)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
+  footer img{height:18px;width:auto;opacity:.8}
 
-.urgency-line {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeUp 0.9s ease 0.6s forwards;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-.urgency-line::before,
-.urgency-line::after {
-  content: '';
-  height: 1px;
-  width: 40px;
-  background: var(--gold);
-  opacity: 0.5;
-}
+  /* botao fixo no celular */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    background:linear-gradient(180deg,rgba(7,10,6,0),rgba(7,10,6,.92) 30%);transform:translateY(110%);transition:transform .4s var(--ease);display:none}
+  .sticky.on{transform:none}
+  .sticky .btn{width:100%}
 
-.btn-vip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: var(--white);
-  color: var(--green-bg);
-  font-family: 'Jost', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 18px 40px;
-  border-radius: 100px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-  opacity: 0;
-  animation: fadeUp 0.9s ease 0.7s forwards;
-}
-.btn-vip:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.25);
-}
-.btn-vip svg { width: 20px; height: 20px; fill: var(--green-bg); flex-shrink: 0; }
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
 
-.spots-note {
-  margin-top: 16px;
-  font-size: 11px;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 0.05em;
-  opacity: 0;
-  animation: fadeUp 0.9s ease 0.85s forwards;
-}
-.spots-note span {
-  color: rgba(255,255,255,0.75);
-  font-weight: 500;
-}
-
-/* ─── OFFERS ─── */
-.offers {
-  background: var(--cream);
-  padding: 80px 28px;
-  text-align: center;
-}
-
-.section-eyebrow {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--green-mid);
-  margin-bottom: 10px;
-}
-
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.8rem, 6vw, 2.8rem);
-  font-weight: 400;
-  line-height: 1.15;
-  color: var(--dark);
-  margin-bottom: 12px;
-}
-
-.section-divider {
-  width: 60px;
-  height: 1px;
-  background: var(--green-light);
-  margin: 0 auto 48px;
-  opacity: 0.6;
-}
-
-.offers-grid {
-  max-width: 700px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-}
-
-.offer-card {
-  background: var(--white);
-  border: 1px solid rgba(90,107,74,0.1);
-  border-radius: 16px;
-  padding: 32px 20px 28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.offer-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(90,107,74,0.12);
-}
-.offer-icon {
-  width: 48px;
-  height: 48px;
-  background: var(--green-pale);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-}
-.offer-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--dark);
-  line-height: 1.2;
-}
-.offer-desc {
-  font-size: 0.82rem;
-  color: var(--muted);
-  line-height: 1.6;
-}
-.offer-tag {
-  display: inline-block;
-  background: var(--green-pale);
-  color: var(--green-dark);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 100px;
-}
-
-/* ─── SOCIAL PROOF ─── */
-.social-proof {
-  background: var(--green-pale);
-  padding: 80px 0;
-  overflow: hidden;
-  text-align: center;
-}
-
-.social-proof-header {
-  padding: 0 28px;
-  margin-bottom: 48px;
-}
-
-/* carousel */
-.carousel-track-wrap {
-  overflow: hidden;
-  position: relative;
-  padding: 8px 0;
-}
-.carousel-track-wrap::before,
-.carousel-track-wrap::after {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  width: 80px;
-  z-index: 2;
-  pointer-events: none;
-}
-.carousel-track-wrap::before { left: 0; background: linear-gradient(to right, var(--green-pale), transparent); }
-.carousel-track-wrap::after  { right: 0; background: linear-gradient(to left,  var(--green-pale), transparent); }
-
-.carousel-track {
-  display: flex;
-  gap: 16px;
-  width: max-content;
-  animation: scroll 32s linear infinite;
-}
-.carousel-track:hover { animation-play-state: paused; }
-@keyframes scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.review-card {
-  background: var(--white);
-  border-radius: 16px;
-  padding: 24px 24px 20px;
-  width: 280px;
-  flex-shrink: 0;
-  text-align: left;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
-  border: 1px solid rgba(255,255,255,0.8);
-}
-.stars {
-  color: #d4a843;
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
-.review-text {
-  font-size: 0.82rem;
-  color: var(--dark);
-  line-height: 1.65;
-  margin-bottom: 16px;
-  font-style: italic;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-}
-.review-author {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--dark);
-  letter-spacing: 0.03em;
-}
-.review-location {
-  font-size: 0.72rem;
-  color: var(--muted);
-  margin-top: 2px;
-  letter-spacing: 0.05em;
-}
-.review-unit {
-  font-size: 0.7rem;
-  color: var(--green-mid);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 4px;
-}
-
-/* ─── CTA ─── */
-.cta-section {
-  background: var(--green-bg);
-  padding: 80px 28px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.cta-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,255,255,0.05), transparent);
-  pointer-events: none;
-}
-.cta-section .section-title { color: var(--white); }
-.cta-section .section-eyebrow { color: rgba(255,255,255,0.55); }
-.cta-section .section-divider { background: rgba(255,255,255,0.25); }
-
-.cta-text {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.75;
-  max-width: 400px;
-  margin: 0 auto 40px;
-  font-weight: 300;
-}
-.cta-text strong { color: var(--white); font-weight: 600; }
-
-.btn-vip-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: var(--white);
-  color: var(--green-bg);
-  font-family: 'Jost', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 18px 44px;
-  border-radius: 100px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-}
-.btn-vip-cta:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,0.25); }
-.btn-vip-cta svg { width: 20px; height: 20px; fill: var(--green-bg); flex-shrink: 0; }
-
-.cta-note {
-  margin-top: 20px;
-  font-size: 11px;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 0.08em;
-}
-
-/* ─── FOOTER ─── */
-footer {
-  background: var(--dark);
-  padding: 32px 28px;
-  text-align: center;
-}
-.footer-logo {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-}
-
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ─── SCROLL REVEAL ─── */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-@media (max-width: 540px) {
-  .offers-grid { grid-template-columns: 1fr 1fr; }
-  .offer-card { padding: 24px 14px 20px; }
-}
-@media (max-width: 360px) {
-  .offers-grid { grid-template-columns: 1fr; }
-}
+  @media (max-width:860px){
+    body{font-size:16px}
+    .top{padding:16px 0}
+    .top img{height:18px}
+    .pin{font-size:12px}
+    .hero{padding:62px 0 40px;min-height:auto}
+    .hero-grid{grid-template-columns:1fr;gap:18px}
+    .hero-photo{order:-1;aspect-ratio:16/9;border-radius:20px}
+    .hero-photo img{object-position:50% 22%}
+    .tag{left:12px;bottom:12px;padding:8px 12px;border-radius:12px}
+    .tag b{font-size:22px}
+    .badges{gap:12px;margin-bottom:14px}
+    .badges .b1{height:24px}
+    .badges .b2{height:17px}
+    h1{font-size:clamp(30px,8.6vw,40px);margin-bottom:10px}
+    .lead{margin-bottom:18px}
+    .btn{min-height:56px;padding:0 18px;font-size:16px;white-space:nowrap;gap:10px}
+    .final-box{padding-inline:18px}
+    .note{margin-top:10px;font-size:13px}
+    .count-label{margin-top:20px}
+    .count{gap:8px}
+    .count div{padding:10px 4px}
+    .count b{font-size:24px}
+    section{padding:56px 0}
+    .perk{padding:22px}
+    .perks{grid-template-columns:1fr}
+    .protos{grid-template-columns:repeat(2,1fr);gap:10px}
+    .btn{width:100%}
+    .count div{flex:1;min-width:0}
+    .sticky{display:block}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 
-
-<!-- ═══ HERO ═══ -->
-<section class="hero">
-  <div class="hero-deco"></div>
-  <div class="hero-deco"></div>
-  <div class="hero-deco"></div>
-
-  <div class="hero-inner">
-    <!-- LOGO (substitua pelo <img> da logo quando tiver o arquivo) -->
-    <div class="logo-wrap">
-      <div class="logo-text">BOTOCLINIC<sup>®</sup></div>
-    </div>
-
-    <div class="vip-badge">Acesso Exclusivo · Grupo VIP</div>
-
-    <h1 class="hero-title">
-      Você é uma<br><em>cliente especial</em>
-    </h1>
-
-    <p class="hero-sub">
-      Criamos protocolos especiais para o <strong>Dia das Mães</strong> com condição exclusiva e um <strong>bônus surpresa</strong> apenas para quem entrar no grupo VIP.<br>A pré-venda já foi um sucesso — e você não pode ficar de fora.
-    </p>
-
-    <div class="urgency-line">Vagas Limitadas</div>
-
-    <a class="btn-vip" href="https://chat.whatsapp.com/KkBdVKtjaN8J1A3JGyMVMT?mode=gi_t" target="_blank">
-      <svg viewBox="0 0 24 24"><path d="M12.001 2C6.478 2 2 6.478 2 12.001c0 1.788.475 3.47 1.302 4.924L2 22l5.232-1.278A9.947 9.947 0 0012.001 22C17.523 22 22 17.522 22 12.001 22 6.478 17.523 2 12.001 2zm4.994 13.986c-.214.601-1.246 1.147-1.714 1.196-.424.044-.96.063-1.549-.097-.358-.1-.817-.234-1.401-.457-2.458-.961-4.059-3.405-4.184-3.563-.122-.158-.991-1.316-.991-2.509 0-1.194.625-1.782.846-2.026.222-.244.483-.304.644-.304.16 0 .322.001.464.008.148.007.348-.056.545.416.203.486.689 1.677.749 1.8.061.123.1.267.02.43-.08.162-.122.263-.241.405-.12.142-.252.317-.359.424-.12.119-.245.25-.105.49.14.242.622 1.027 1.335 1.664.917.817 1.69 1.069 1.932 1.19.242.12.383.1.524-.06.142-.162.609-.71.77-.954.162-.243.325-.202.547-.122.222.08 1.41.666 1.652.787.243.122.402.182.463.283.06.102.06.588-.154 1.189z"/></svg>
-      Entrar no Grupo VIP
-    </a>
-
-    <p class="spots-note">Botoclinic Shopping Pelotas · <span>Exclusivo para clientes selecionadas</span></p>
+<header class="top">
+  <div class="wrap">
+    <img src="grupovip/img/logo-botoclinic.png" alt="Botoclinic" width="520" height="63">
+    <span class="pin"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>Pelotas/RS</span>
   </div>
-</section>
+</header>
 
-<!-- ═══ OFERTAS ═══ -->
-<section class="offers">
-  <p class="section-eyebrow reveal">O que está incluso</p>
-  <h2 class="section-title reveal reveal-delay-1">Protocolos <em style="font-family:'Cormorant Garamond',serif;font-style:italic">especiais</em><br>para o Dia das Mães</h2>
-  <div class="section-divider reveal reveal-delay-2"></div>
-
-  <div class="offers-grid">
-    <div class="offer-card reveal reveal-delay-1">
-      <div class="offer-icon">✨</div>
-      <div class="offer-name">Condição Especial</div>
-      <div class="offer-desc">Preços exclusivos para membros do grupo VIP. Muito além do desconto comum.</div>
-      <span class="offer-tag">Só no Grupo</span>
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="badges">
+          <img class="b1" src="grupovip/img/bf-black.png" alt="Black" width="300" height="78">
+          <img class="b2" src="grupovip/img/bf-friday.png" alt="Friday" width="460" height="77">
+        </div>
+        <h1>A Black da Botoclinic Pelotas chega <em>direto no seu WhatsApp</em></h1>
+        <p class="lead">Entre no Grupo VIP e receba as condições da Black Friday, com <b>protocolos com até 70% off</b>. Só até <b>30 de novembro</b>.</p>
+        <a class="btn js-cta" href="https://chat.whatsapp.com/DHB9mAQ8wiy9R8bUScbYYr?s=cl&amp;p=i&amp;iam=2" target="_blank" rel="noopener" data-local="hero">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.34ZM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.97.99-3.62-.23-.37a9.8 9.8 0 1 1 8.33 4.6Zm8.34-18.14A11.75 11.75 0 0 0 12.04.2C5.55.2.27 5.48.27 11.97c0 2.07.54 4.1 1.57 5.89L.17 24l6.3-1.65a11.76 11.76 0 0 0 5.57 1.42h.01c6.49 0 11.77-5.28 11.77-11.77 0-3.15-1.22-6.1-3.44-8.33Z"/></svg>
+          Quero entrar no Grupo VIP
+        </a>
+        <p class="note">É grátis. Você entra pelo link e pode sair quando quiser.</p>
+        <p class="count-label js-count-wrap">A Black termina em</p>
+        <div class="count js-count" aria-live="polite">
+          <div><b data-u="d">00</b><span>dias</span></div>
+          <div><b data-u="h">00</b><span>horas</span></div>
+          <div><b data-u="m">00</b><span>min</span></div>
+          <div><b data-u="s">00</b><span>seg</span></div>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="grupovip/img/sculptra.webp" alt="Mulher sorrindo com pele iluminada" width="600" height="750" fetchpriority="high">
+        <figcaption class="tag"><small>até</small><b>70% off</b></figcaption>
+      </figure>
     </div>
-    <div class="offer-card reveal reveal-delay-2">
-      <div class="offer-icon">🎁</div>
-      <div class="offer-name">Bônus Exclusivo</div>
-      <div class="offer-desc">Uma surpresa especial revelada apenas para quem entrar no grupo antes do lançamento.</div>
-      <span class="offer-tag">Surpresa VIP</span>
-    </div>
-    <div class="offer-card reveal reveal-delay-3">
-      <div class="offer-icon">💐</div>
-      <div class="offer-name">Protocolos Dia das Mães</div>
-      <div class="offer-desc">Tratamentos selecionados especialmente para esta data. Resultados que encantam.</div>
-      <span class="offer-tag">Lançamento</span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ SOCIAL PROOF CAROUSEL ═══ -->
-<section class="social-proof">
-  <div class="social-proof-header">
-    <p class="section-eyebrow reveal">O que dizem nossas clientes</p>
-    <h2 class="section-title reveal reveal-delay-1">Resultados que<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic">falam por si</em></h2>
-    <div class="section-divider reveal reveal-delay-2"></div>
-  </div>
-
-  <div class="carousel-track-wrap">
-    <div class="carousel-track" id="track">
-      <!-- Reviews reais — Pelotas RS -->
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Fui sempre muito bem atendida, passei por diferentes profissionais ao longo de 1 ano e todos super competentes. Amando os resultados desde que comecei a minha harmonização facial! Indico de olhos fechados!"</p>
-        <div class="review-author">Simone Jardim Cardoso</div>
-        <div class="review-location">Pelotas · RS</div>
-        <div class="review-unit">Botoclinic Shopping Pelotas</div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Super recomendo!! Atendimento maravilhoso e procedimentos de alta qualidade!"</p>
-        <div class="review-author">Vanessa Menezes</div>
-        <div class="review-location">Pelotas · RS</div>
-        <div class="review-unit">Botoclinic Shopping Pelotas</div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Atendimento maravilhoso! As gurias são super queridas e atenciosas."</p>
-        <div class="review-author">Raquel Baumhardt</div>
-        <div class="review-location">Pelotas · RS</div>
-        <div class="review-unit">Botoclinic Shopping Pelotas</div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Super recomendo, atendimento qualificado e o resultado surpreendente."</p>
-        <div class="review-author">Franciele Bess</div>
-        <div class="review-location">Pelotas · RS</div>
-        <div class="review-unit">Botoclinic Shopping Pelotas</div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Tratamento revolucionário anti imperfeições... Skinbooster foi excelente."</p>
-        <div class="review-author">Micca Tancini</div>
-        <div class="review-location">Pelotas · RS</div>
-        <div class="review-unit">Botoclinic Shopping Pelotas</div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Excelente atendimento 🥰"</p>
-        <div class="review-author">Thais Crizel</div>
-        <div class="review-location">Pelotas · RS</div>
-        <div class="review-unit">Botoclinic Shopping Pelotas</div>
-      </div>
-      <!-- Duplicadas para loop infinito -->
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Fui sempre muito bem atendida, passei por diferentes profissionais ao longo de 1 ano e todos super competentes. Amando os resultados desde que comecei a minha harmonização facial! Indico de olhos fechados!"</p>
-        <div class="review-author">Simone Jardim Cardoso</div>
-        <div class="review-location">Pelotas · RS</div>
-        <div class="review-unit">Botoclinic Shopping Pelotas</div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Super recomendo!! Atendimento maravilhoso e procedimentos de alta qualidade!"</p>
-        <div class="review-author">Vanessa Menezes</div>
-        <div class="review-location">Pelotas · RS</div>
-        <div class="review-unit">Botoclinic Shopping Pelotas</div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Atendimento maravilhoso! As gurias são super queridas e atenciosas."</p>
-        <div class="review-author">Raquel Baumhardt</div>
-        <div class="review-location">Pelotas · RS</div>
-        <div class="review-unit">Botoclinic Shopping Pelotas</div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Super recomendo, atendimento qualificado e o resultado surpreendente."</p>
-        <div class="review-author">Franciele Bess</div>
-        <div class="review-location">Pelotas · RS</div>
-        <div class="review-unit">Botoclinic Shopping Pelotas</div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Tratamento revolucionário anti imperfeições... Skinbooster foi excelente."</p>
-        <div class="review-author">Micca Tancini</div>
-        <div class="review-location">Pelotas · RS</div>
-        <div class="review-unit">Botoclinic Shopping Pelotas</div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Excelente atendimento 🥰"</p>
-        <div class="review-author">Thais Crizel</div>
-        <div class="review-location">Pelotas · RS</div>
-        <div class="review-unit">Botoclinic Shopping Pelotas</div>
+  <section>
+    <div class="wrap">
+      <p class="kicker reveal">Por que entrar</p>
+      <h2 class="reveal">Tudo da Black, sem você precisar procurar</h2>
+      <div class="perks">
+        <div class="perk reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41 13.42 20.6a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z"/><circle cx="7" cy="7" r="1.5"/></svg></div>
+          <h3>Condições da Black</h3>
+          <p>As ofertas da Botoclinic Pelotas chegam no grupo, com protocolos com até 70% off.</p>
+        </div>
+        <div class="perk reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></div>
+          <h3>Avaliação gratuita</h3>
+          <p>Agende sua avaliação com o nosso time de profissionais e descubra o protocolo ideal para você.</p>
+        </div>
+        <div class="perk reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg></div>
+          <h3>Só até 30/11</h3>
+          <p>As condições da Black Friday valem até 30 de novembro. No grupo, você não perde o prazo.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ CTA FINAL ═══ -->
-<section class="cta-section">
-  <p class="section-eyebrow reveal">Botoclinic Shopping Pelotas</p>
-  <h2 class="section-title reveal reveal-delay-1">Garanta sua vaga<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic">agora mesmo</em></h2>
-  <div class="section-divider reveal reveal-delay-2"></div>
+  <section style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker reveal">Protocolos na Black</p>
+      <h2 class="reveal">Escolha o seu, com até 70% off</h2>
+      <div class="protos">
+        <div class="proto reveal"><img src="grupovip/img/botox-50ui.webp" alt="" loading="lazy" width="600" height="750"><span>Botox</span></div>
+        <div class="proto reveal"><img src="grupovip/img/preenchedor-1ml.webp" alt="" loading="lazy" width="600" height="750"><span>Preenchimento</span></div>
+        <div class="proto reveal"><img src="grupovip/img/ultraformer-facial.webp" alt="" loading="lazy" width="600" height="750"><span>Ultraformer III</span></div>
+        <div class="proto reveal"><img src="grupovip/img/ultraformer-bio.webp" alt="" loading="lazy" width="600" height="750"><span>Ultraformer III + Bioestimulador</span></div>
+        <div class="proto reveal"><img src="grupovip/img/radiesse.webp" alt="" loading="lazy" width="600" height="750"><span>Radiesse</span></div>
+        <div class="proto reveal"><img src="grupovip/img/sculptra.webp" alt="" loading="lazy" width="600" height="750"><span>Sculptra</span></div>
+        <div class="proto reveal"><img src="grupovip/img/harmonyca.webp" alt="" loading="lazy" width="600" height="750"><span>HArmonyCa</span></div>
+        <div class="proto reveal"><img src="grupovip/img/lavieen.webp" alt="" loading="lazy" width="600" height="750"><span>Lavieen</span></div>
+      </div>
+      <p class="fine">Imagens ilustrativas. Condições e protocolos sujeitos a avaliação.</p>
+    </div>
+  </section>
 
-  <p class="cta-text reveal reveal-delay-2">
-    Você é uma <strong>cliente especial</strong> e merece acesso VIP ao que há de melhor. Vagas <strong>limitadas</strong> — não fique de fora do grupo exclusivo do Dia das Mães.
-  </p>
-
-  <a class="btn-vip-cta reveal reveal-delay-3" href="https://chat.whatsapp.com/KkBdVKtjaN8J1A3JGyMVMT?mode=gi_t" target="_blank">
-    <svg viewBox="0 0 24 24"><path d="M12.001 2C6.478 2 2 6.478 2 12.001c0 1.788.475 3.47 1.302 4.924L2 22l5.232-1.278A9.947 9.947 0 0012.001 22C17.523 22 22 17.522 22 12.001 22 6.478 17.523 2 12.001 2zm4.994 13.986c-.214.601-1.246 1.147-1.714 1.196-.424.044-.96.063-1.549-.097-.358-.1-.817-.234-1.401-.457-2.458-.961-4.059-3.405-4.184-3.563-.122-.158-.991-1.316-.991-2.509 0-1.194.625-1.782.846-2.026.222-.244.483-.304.644-.304.16 0 .322.001.464.008.148.007.348-.056.545.416.203.486.689 1.677.749 1.8.061.123.1.267.02.43-.08.162-.122.263-.241.405-.12.142-.252.317-.359.424-.12.119-.245.25-.105.49.14.242.622 1.027 1.335 1.664.917.817 1.69 1.069 1.932 1.19.242.12.383.1.524-.06.142-.162.609-.71.77-.954.162-.243.325-.202.547-.122.222.08 1.41.666 1.652.787.243.122.402.182.463.283.06.102.06.588-.154 1.189z"/></svg>
-    Entrar no Grupo VIP
-  </a>
-
-  <p class="cta-note reveal reveal-delay-4">Acesso exclusivo · Vagas limitadas · Grupo fechado</p>
-</section>
+  <section class="final" style="padding-top:0">
+    <div class="wrap">
+      <div class="final-box reveal">
+        <p class="kicker">Botoclinic Pelotas</p>
+        <h2>Sua beleza em dia, por muito menos</h2>
+        <p class="sub">Entre agora no Grupo VIP e receba as condições da Black Friday antes que o prazo acabe.</p>
+        <a class="btn js-cta" href="https://chat.whatsapp.com/DHB9mAQ8wiy9R8bUScbYYr?s=cl&amp;p=i&amp;iam=2" target="_blank" rel="noopener" data-local="final">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.34ZM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.97.99-3.62-.23-.37a9.8 9.8 0 1 1 8.33 4.6Zm8.34-18.14A11.75 11.75 0 0 0 12.04.2C5.55.2.27 5.48.27 11.97c0 2.07.54 4.1 1.57 5.89L.17 24l6.3-1.65a11.76 11.76 0 0 0 5.57 1.42h.01c6.49 0 11.77-5.28 11.77-11.77 0-3.15-1.22-6.1-3.44-8.33Z"/></svg>
+          Quero entrar no Grupo VIP
+        </a>
+        <p class="count-label js-count-wrap">A Black termina em</p>
+        <div class="count js-count">
+          <div><b data-u="d">00</b><span>dias</span></div>
+          <div><b data-u="h">00</b><span>horas</span></div>
+          <div><b data-u="m">00</b><span>min</span></div>
+          <div><b data-u="s">00</b><span>seg</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <div class="footer-logo">BOTOCLINIC<sup style="font-size:10px;font-weight:300">®</sup> · Shopping Pelotas</div>
+  <div class="wrap">
+    <img src="grupovip/img/logo-botoclinic.png" alt="Botoclinic" width="520" height="63">
+    <span>Botoclinic Pelotas. Black Friday válida até 30/11/2026, não acumulativa com outras ofertas.</span>
+  </div>
 </footer>
 
+<div class="sticky js-sticky">
+  <a class="btn js-cta" href="https://chat.whatsapp.com/DHB9mAQ8wiy9R8bUScbYYr?s=cl&amp;p=i&amp;iam=2" target="_blank" rel="noopener" data-local="fixo">Entrar no Grupo VIP</a>
+</div>
+
 <script>
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+(function(){
+  // fim da Black: 30/11/2026 23:59:59 (horario de Brasilia)
+  var FIM = new Date('2026-11-30T23:59:59-03:00').getTime();
+  var boxes = document.querySelectorAll('.js-count');
+  var labels = document.querySelectorAll('.js-count-wrap');
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function tick(){
+    var t = FIM - Date.now();
+    if (t <= 0){
+      boxes.forEach(function(b){ b.style.display = 'none'; });
+      labels.forEach(function(l){ l.style.display = 'none'; });
+      return;
+    }
+    var v = { d: Math.floor(t / 864e5), h: Math.floor(t / 36e5) % 24, m: Math.floor(t / 6e4) % 60, s: Math.floor(t / 1e3) % 60 };
+    boxes.forEach(function(b){
+      b.querySelectorAll('[data-u]').forEach(function(el){ el.textContent = pad(v[el.getAttribute('data-u')]); });
+    });
+    setTimeout(tick, 1000 - (Date.now() % 1000));
+  }
+  tick();
+
+  // botao fixo aparece depois que o botao do topo sai da tela
+  var sticky = document.querySelector('.js-sticky');
+  var heroBtn = document.querySelector('.hero .js-cta');
+  var finalBox = document.querySelector('.final-box');
+  if ('IntersectionObserver' in window){
+    var heroVisivel = true, finalVisivel = false;
+    function upd(){ sticky.classList.toggle('on', !heroVisivel && !finalVisivel); }
+    new IntersectionObserver(function(e){ heroVisivel = e[0].isIntersecting; upd(); }).observe(heroBtn);
+    new IntersectionObserver(function(e){ finalVisivel = e[0].isIntersecting; upd(); }).observe(finalBox);
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    // garantia: nada fica escondido se o observer nao disparar em algum navegador
+    setTimeout(function(){ document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }, 2000);
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // clique no CTA: avisa pixel/GTM se forem instalados depois
+  document.querySelectorAll('.js-cta').forEach(function(a){
+    a.addEventListener('click', function(){
+      var local = a.getAttribute('data-local');
+      if (window.fbq) fbq('track', 'Lead', { content_name: 'Grupo VIP Black', local: local });
+      (window.dataLayer = window.dataLayer || []).push({ event: 'grupo_vip_click', local: local });
+    });
+  });
+})();
 </script>
 </body>
 </html>
