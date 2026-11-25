@@ -220,7 +220,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <h1>A Black da Botoclinic Pelotas chega <em>direto no seu WhatsApp</em></h1>
         <p class="lead">Entre no Grupo VIP e receba as condições da Black Friday, com <b>protocolos com até 70% off</b>. Só até <b>30 de novembro</b>.</p>
-        <a class="btn js-cta" href="https://chat.whatsapp.com/DHB9mAQ8wiy9R8bUScbYYr?s=cl&amp;p=i&amp;iam=2" target="_blank" rel="noopener" data-local="hero">
+        <a class="btn js-cta" href="/entrar/?local=hero" data-local="hero">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.34ZM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.97.99-3.62-.23-.37a9.8 9.8 0 1 1 8.33 4.6Zm8.34-18.14A11.75 11.75 0 0 0 12.04.2C5.55.2.27 5.48.27 11.97c0 2.07.54 4.1 1.57 5.89L.17 24l6.3-1.65a11.76 11.76 0 0 0 5.57 1.42h.01c6.49 0 11.77-5.28 11.77-11.77 0-3.15-1.22-6.1-3.44-8.33Z"/></svg>
           Quero entrar no Grupo VIP
         </a>
@@ -288,7 +288,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="kicker">Botoclinic Pelotas</p>
         <h2>Sua beleza em dia, por muito menos</h2>
         <p class="sub">Entre agora no Grupo VIP e receba as condições da Black Friday antes que o prazo acabe.</p>
-        <a class="btn js-cta" href="https://chat.whatsapp.com/DHB9mAQ8wiy9R8bUScbYYr?s=cl&amp;p=i&amp;iam=2" target="_blank" rel="noopener" data-local="final">
+        <a class="btn js-cta" href="/entrar/?local=final" data-local="final">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.34ZM12.04 21.8h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.72.97.99-3.62-.23-.37a9.8 9.8 0 1 1 8.33 4.6Zm8.34-18.14A11.75 11.75 0 0 0 12.04.2C5.55.2.27 5.48.27 11.97c0 2.07.54 4.1 1.57 5.89L.17 24l6.3-1.65a11.76 11.76 0 0 0 5.57 1.42h.01c6.49 0 11.77-5.28 11.77-11.77 0-3.15-1.22-6.1-3.44-8.33Z"/></svg>
           Quero entrar no Grupo VIP
         </a>
@@ -312,7 +312,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <div class="sticky js-sticky">
-  <a class="btn js-cta" href="https://chat.whatsapp.com/DHB9mAQ8wiy9R8bUScbYYr?s=cl&amp;p=i&amp;iam=2" target="_blank" rel="noopener" data-local="fixo">Entrar no Grupo VIP</a>
+  <a class="btn js-cta" href="/entrar/?local=fixo" data-local="fixo">Entrar no Grupo VIP</a>
 </div>
 
 <script>
@@ -356,12 +356,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
 
-  // clique no CTA: avisa pixel/GTM se forem instalados depois
+  // clique no CTA
   document.querySelectorAll('.js-cta').forEach(function(a){
     a.addEventListener('click', function(){
       var local = a.getAttribute('data-local');
-      if (window.fbq) fbq('track', 'Lead', { content_name: 'Grupo VIP Black', local: local });
-      if (window.gtag) gtag('event', 'generate_lead', { lead_source: 'Grupo VIP Black', local: local });
+      // Lead e generate_lead saem na pagina /entrar/ (aqui a pagina fecha antes do envio)
       (window.dataLayer = window.dataLayer || []).push({ event: 'grupo_vip_click', local: local });
     });
   });

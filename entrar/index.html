@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KK55LSQ3');</script>
+<!-- End Google Tag Manager -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1111388071726457');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1111388071726457&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C4WBQGS74F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C4WBQGS74F');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entrando no Grupo VIP | Botoclinic Pelotas</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070a06">
+<noscript><meta http-equiv="refresh" content="1; url=https://chat.whatsapp.com/DHB9mAQ8wiy9R8bUScbYYr?s=cl&amp;p=i&amp;iam=2"></noscript>
+<style>
+  html,body{margin:0;height:100%;background:#070a06;color:#f4f6ee;font-family:"Figtree","Avenir Next",system-ui,sans-serif}
+  main{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px;text-align:center}
+  img{height:20px;width:auto}
+  .spin{width:42px;height:42px;border-radius:50%;border:3px solid rgba(225,250,0,.25);border-top-color:#e1fa00;animation:r .8s linear infinite}
+  @keyframes r{to{transform:rotate(360deg)}}
+  p{margin:0;font-size:18px}
+  a{color:#141900;background:#e1fa00;font-weight:800;text-decoration:none;padding:16px 26px;border-radius:999px;font-size:16px}
+  small{color:#8c967e;font-size:13px}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK55LSQ3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<main>
+  <img src="/grupovip/img/logo-botoclinic.png" alt="Botoclinic">
+  <div class="spin" aria-hidden="true"></div>
+  <p>Abrindo o Grupo VIP no WhatsApp...</p>
+  <a id="ir" href="https://chat.whatsapp.com/DHB9mAQ8wiy9R8bUScbYYr?s=cl&amp;p=i&amp;iam=2">Toque aqui se não abrir</a>
+  <small>Botoclinic Pelotas</small>
+</main>
+<script>
+(function(){
+  // Lead disparado com a pagina aberta: o envio nao se perde quando o WhatsApp abre.
+  var GRUPO = 'https://chat.whatsapp.com/DHB9mAQ8wiy9R8bUScbYYr?s=cl&p=i&iam=2';
+  var local = (new URLSearchParams(location.search)).get('local') || 'direto';
+  var chave = 'bc_lead_grupo_vip';
+  var jaContou = false;
+  try { jaContou = sessionStorage.getItem(chave) === '1'; sessionStorage.setItem(chave, '1'); } catch (e) {}
+  if (!jaContou) {
+    if (window.fbq) fbq('track', 'Lead', { content_name: 'Grupo VIP Black', local: local });
+    if (window.gtag) gtag('event', 'generate_lead', { lead_source: 'Grupo VIP Black', local: local, transport_type: 'beacon' });
+    (window.dataLayer = window.dataLayer || []).push({ event: 'grupo_vip_lead', local: local });
+  }
+  // tempo para Pixel e GA4 saírem antes de trocar de pagina
+  setTimeout(function(){ location.replace(GRUPO); }, 900);
+})();
+</script>
+</body>
+</html>
