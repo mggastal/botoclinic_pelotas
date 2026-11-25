@@ -26,6 +26,14 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1111388071726457&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C4WBQGS74F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C4WBQGS74F');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Grupo VIP Black Friday | Botoclinic Pelotas</title>
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -353,6 +361,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     a.addEventListener('click', function(){
       var local = a.getAttribute('data-local');
       if (window.fbq) fbq('track', 'Lead', { content_name: 'Grupo VIP Black', local: local });
+      if (window.gtag) gtag('event', 'generate_lead', { lead_source: 'Grupo VIP Black', local: local });
       (window.dataLayer = window.dataLayer || []).push({ event: 'grupo_vip_click', local: local });
     });
   });
