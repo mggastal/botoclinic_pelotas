@@ -74,12 +74,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var jaContou = false;
   try { jaContou = sessionStorage.getItem(chave) === '1'; sessionStorage.setItem(chave, '1'); } catch (e) {}
   if (!jaContou) {
-    if (window.fbq) fbq('track', 'Lead', { content_name: 'Grupo VIP Black', local: local });
+    // O Meta bloqueia o Lead neste Pixel ("restricted event"); o Contact é o evento de conversão.
+    if (window.fbq) {
+      fbq('track', 'Contact', { content_name: 'Grupo VIP Black', local: local });
+      fbq('track', 'Lead', { content_name: 'Grupo VIP Black', local: local });
+    }
     if (window.gtag) gtag('event', 'generate_lead', { lead_source: 'Grupo VIP Black', local: local, transport_type: 'beacon' });
     (window.dataLayer = window.dataLayer || []).push({ event: 'grupo_vip_lead', local: local });
   }
-  // So abre o WhatsApp depois que o Lead saiu de fato (o Pixel demora para carregar).
-  // Limite de 2,5s; se o Pixel nao carregar, manda o Lead direto pela URL do Pixel.
+  // So abre o WhatsApp depois que o Contact saiu de fato (o Pixel demora para carregar).
+  // Limite de 2,5s; se o Pixel nao carregar, manda o Contact direto pela URL do Pixel.
   var inicio = Date.now(), foi = false;
   function saiu(re){
     try { return performance.getEntriesByType('resource').some(function(e){ return re.test(e.name); }); }
@@ -90,21 +94,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function abrir(){
     if (foi) return; foi = true;
     if (!TESTE) return location.replace(GRUPO);
-    var pl = saiu(/facebook\.com\/tr\/?\?.*ev=Lead/), g = saiu(/g\/collect/);
-    document.querySelector('main p').innerHTML = 'TESTE (não abre o grupo)<br>Pixel Lead: ' + (pl ? 'enviado ✅' : 'não enviado ❌')
+    var pl = saiu(/facebook\.com\/tr\/?\?.*ev=Contact/), g = saiu(/g\/collect/);
+    document.querySelector('main p').innerHTML = 'TESTE (não abre o grupo)<br>Pixel Contact: ' + (pl ? 'enviado ✅' : 'não enviado ❌')
       + '<br>GA4: ' + (g ? 'enviado ✅' : 'não enviado ❌') + '<br>Tempo: ' + (Date.now() - inicio) + ' ms';
     document.querySelector('.spin').style.display = 'none';
   }
   function reserva(){
     var c = document.cookie.match(/_fbp=([^;]+)/), f = document.cookie.match(/_fbc=([^;]+)/);
-    var u = 'https://www.facebook.com/tr?id=1111388071726457&ev=Lead&noscript=1&cd[local]=' + encodeURIComponent(local)
+    var u = 'https://www.facebook.com/tr?id=1111388071726457&ev=Contact&noscript=1&cd[local]=' + encodeURIComponent(local)
       + (c ? '&fbp=' + c[1] : '') + (f ? '&fbc=' + f[1] : '') + '&dl=' + encodeURIComponent(location.href);
     new Image().src = u;
   }
   var reservaUsada = false;
   (function checar(){
     var t = Date.now() - inicio;
-    var lead = jaContou || saiu(/facebook\.com\/tr\/?\?.*ev=Lead/);
+    var lead = jaContou || saiu(/facebook\.com\/tr\/?\?.*ev=Contact/);
     var ga = jaContou || saiu(/g\/collect.*en=generate_lead/) || t > 1500;
     if (lead && ga && t > 400) return setTimeout(abrir, 150);
     if (t > 2000 && !lead && !reservaUsada) { reservaUsada = true; reserva(); return setTimeout(abrir, 400); }
