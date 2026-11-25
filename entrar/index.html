@@ -72,7 +72,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var local = (new URLSearchParams(location.search)).get('local') || 'direto';
   var chave = 'bc_lead_grupo_vip';
   var jaContou = false;
-  try { jaContou = sessionStorage.getItem(chave) === '1'; sessionStorage.setItem(chave, '1'); } catch (e) {}
+  // so evita contar de novo em recarga/voltar logo em seguida (30s), sem travar novos testes
+  try { var ult = +sessionStorage.getItem(chave) || 0; jaContou = Date.now() - ult < 30000; sessionStorage.setItem(chave, String(Date.now())); } catch (e) {}
   if (!jaContou) {
     // O Meta bloqueia o Lead neste Pixel ("restricted event"); o Contact é o evento de conversão.
     if (window.fbq) {
