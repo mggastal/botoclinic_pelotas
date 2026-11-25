@@ -85,7 +85,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     try { return performance.getEntriesByType('resource').some(function(e){ return re.test(e.name); }); }
     catch (e) { return false; }
   }
-  function abrir(){ if (foi) return; foi = true; location.replace(GRUPO); }
+  // ?teste=1 nao abre o grupo: mostra na tela se o Lead saiu (para conferir no celular)
+  var TESTE = /[?&]teste=1/.test(location.search);
+  function abrir(){
+    if (foi) return; foi = true;
+    if (!TESTE) return location.replace(GRUPO);
+    var pl = saiu(/facebook\.com\/tr\/?\?.*ev=Lead/), g = saiu(/g\/collect/);
+    document.querySelector('main p').innerHTML = 'TESTE (não abre o grupo)<br>Pixel Lead: ' + (pl ? 'enviado ✅' : 'não enviado ❌')
+      + '<br>GA4: ' + (g ? 'enviado ✅' : 'não enviado ❌') + '<br>Tempo: ' + (Date.now() - inicio) + ' ms';
+    document.querySelector('.spin').style.display = 'none';
+  }
   function reserva(){
     var c = document.cookie.match(/_fbp=([^;]+)/), f = document.cookie.match(/_fbc=([^;]+)/);
     var u = 'https://www.facebook.com/tr?id=1111388071726457&ev=Lead&noscript=1&cd[local]=' + encodeURIComponent(local)
